@@ -5,23 +5,25 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <h1>ChromeBookGamers</h1>
-        <h3>Upload an HTML file to start playing!</h3>
-        <p>This website was created for chromebook users whos school blocked file links.</p>
-        <p>Get game files <a href = "https://docs.google.com/document/d/1_FmH3BlSBQI7FGgAQL59-ZPe8eCxs35wel6JUyVaG8Q/edit?tab=t.0" target="_blank">on this doc</a>.</p>
-        <p>You can also get game files from <a href = "https://github.com/brickyosu/ugs-files-sorted" target = "_blank">this github page</a> if you don't have access to the doc.</p>
-        <input type="file" id="fileInput" accept=".html,.htm">
-        <script>
-            document.getElementById("fileInput").addEventListener("change", async (event) => {
-                const file = event.target.files[0];
-                if (!file) return;
-
-                const text = await file.text();
-                const blob = new Blob([text], { type: "text/html" });
-                const url = URL.createObjectURL(blob);
-
-                window.open(url);
-            });
-        </script>
+        <div class="container">
+            <h1>ChromeBookGamers</h1>
+            <h3>Upload an HTML file to start playing!</h3>
+            <p>This website was created for chromebook users whos school blocked file links.</p>
+            <p>Get game files <a href = "https://docs.google.com/document/d/1_FmH3BlSBQI7FGgAQL59-ZPe8eCxs35wel6JUyVaG8Q/edit?tab=t.0" target="_blank">on this doc</a>.</p>
+            <p>You can also get game files from <a href = "https://github.com/brickyosu/ugs-files-sorted" target = "_blank">this github page</a> if you don't have access to the doc.</p>
+            <input type="file" id="fileInput" accept=".html,.htm">
+            <script>
+                document.getElementById("fileInput").addEventListener("change", async (event) => {
+                    const file = event.target.files[0];
+                    if (!file) return;
+    
+                    const text = await file.text();
+                    const blob = new Blob([text], { type: "text/html" });
+                    const url = URL.createObjectURL(blob);
+    
+                    window.open(url);
+                });
+            </script>
+        </div>
     </body>
 </html>
