@@ -19,6 +19,10 @@ body {
   margin: auto;
 }
 
+a {
+  color: #4da3ff;
+}
+
 a:visited {
   color: #b38cff;
 }
